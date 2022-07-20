@@ -1,0 +1,9 @@
+MKLINCLUDE="-I${MKLROOT}/include/oneapi/mkl"
+MKLLINK="${MKLROOT}/lib/intel64/libmkl_intel_lp64.a  -lpthread -lm -lmkl_gf_lp64 -lmkl_core -lmkl_sequential"
+FC=ifort
+FFLAGS=" -O2 "
+
+$FC $FFLAGS -c fourier_lib_module.f
+$FC $FFLAGS -c ae_solve_version31.f
+#
+$FC $FFLAGS -o xae3d_ver31 fourier_lib_module.o ae_solve_version31.o -I. $MKLINCLUDE $MKLLINK
