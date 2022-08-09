@@ -1,0 +1,6 @@
+FC=mpif90
+FFLAGS=-O2 
+
+$FC $FFLAGS -c fourier_lib_module.f
+$FC $FFLAGS -c ae_solve_version31.f
+$FC $FFLAGS -o xae3d_ver31 fourier_lib_module.o ae_solve_version31.o -I. -I/opt/local/include -L/opt/local/lib -framework Accelerate
