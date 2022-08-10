@@ -1,0 +1,1 @@
+gfortran -ffixed-form -o xjdqz -O3 symtrd_mod.f90  myjdqz_mod.f90 main_jdqz.f90 libjdqz.a -I.  -lpthread -I/opt/local/include -L/opt/local/lib -framework Accelerate
